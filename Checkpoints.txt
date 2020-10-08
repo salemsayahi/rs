@@ -1,0 +1,25 @@
+Procedure Insertion (VAR arr : ARRAY_OF INTEGER arr,var elm:Integer )/*arr tableau trie croiassant , elm : element inserer */
+Var 
+ length, i, inter,j : INTEGER;
+ VAR tab : ARRAY_OF INTEGER ;
+BEGIN
+   tab:=arr;
+   length := arr.length-1;
+i:=0 ;
+   WHILE (i <= length && arr[i] <elm ) DO
+       i:=i+1 ;
+  END_WHILE
+  
+       // verifier s'il existe un element supérieur 
+       IF (i <= length) THEN
+/*decaler les lement et toujour le dernier de tableau element sera suprimer */
+     FOR j FROM i TO length-1 STEP step  DO 
+     arr[j+1]:=tab[j];
+    END_FOR
+  // inserer elm à leur position i
+    arr[i]:=elm ;
+     ELSE // si elm est superieur aux elment de tableau
+     arr[length]:=elm
+       END_IF
+
+END
